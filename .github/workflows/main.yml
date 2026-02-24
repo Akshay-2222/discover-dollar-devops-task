@@ -16,51 +16,25 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.akshaykumar2222 }}
-        password: ${{ secrets.dubkif-savkU1-qaqqed}}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Backend Image
       run: |
-        docker build -t your_dockerhub_username/dd-backend:latest ./backend
-        docker push your_dockerhub_username/dd-backend:latest
+        docker build -t akshaykumar2222/dd-backend:latest ./backend
+        docker push akshaykumar2222/dd-backend:latest
 
     - name: Build and Push Frontend Image
       run: |
-        docker build -t your_dockerhub_username/dd-frontend:latest ./frontend
-        docker push your_dockerhub_username/dd-frontend:latest
+        docker build -t akshaykumar2222/dd-frontend:latest ./frontend
+        docker push akshaykumar2222/dd-frontend:latest
 
     - name: Deploy to AWS EC2
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.52.66.240.71 }}
-        username: ${{ secrets.ubuntu }}
-        key: ${{ secrets.-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEAvLapWLpcE1DUjCKrXp1RQVU4oprUxD4e+fzqgpISy4Vj0ozM
-LSYg5JSAh/rOCkPVPjSXb64vLkK22OlxTrRHcjDSua2WlZoexwng1nif1/1H2apz
-Y7JcXurB4o6jRi6CUVutcIlubVLGVDxH+Rw+Y+hEcDDz7I0TUJobAQ42hj+Z2i+6
-zxFsjHrLTMF8Rajf2/sQvXUObdzTfUATufdw5XcJOAzzhJfftgH76+CLcbSvxJ65
-oMvjX6Ks815Nr/pIL30lgd0KlOE43PLHLlgJrgBW62wxiKNzU+SEJ/7BwIb9q6NN
-8VM5ds9POWKp/q456EOpcEKUj2FL+njXSftKmwIDAQABAoIBAQCOIoIASzToc3vz
-JHWwaIr3y0lB554TRLquDRlQSNcRJSGfRt7NrqcdouAACx4+ywKEvLXGrwnoLOVt
-EL5/yfb6Ad3lbeI6QX+m6EDJKMczthf00JXiZEeAUg7AJjDBvmv2/TbvyQM8Ihkw
-/soyzVwMgbdyTNybsVH35moqbFsS1uyMCaLs9ZP3zCrvawX6YyKz8+mEdTFIg/xR
-NvqDHF+GN5/lAo1OBgyy+XB5tqdqd/Hg/ona+CtF0EMdM/sfcdqBQW2Kb1mN0kl2
-hlDOpf9cjfu9gY7pFkoBTI1M7YH5GDTGuF5bk+244l35kAsRYwdRLFZOxIFRamNT
-RK1NdKKZAoGBAPp5Cbume69dwH6mFTbpDq/p3237nBHoFiUGU03lGuJtyt0c0WcU
-BhDwkBiOcBnVHZL7aIBz73kBOlQ/qxceshdUzY3E9iI6kSxGjENVZRpWjggE6oKg
-VbvZ76MwyoUKrwVGGvYSk+lBjyRFSizzR/L8CoRgD/9YiHxcmcuSJsJVAoGBAMDg
-vDOz7WM0LDEH9Rg6hHjMBZtxUQjbZ8dTmCufRbXStjUIqykxK65Pai8mvSXxdj7E
-Ta0t6JN5r0ZB0wt7nSRytjInqYHe+TAYAGaPixmwnMmZn6RoNOO2WmRU5oAg/G+K
-mna1QBpIM2uvD5yIjJWeSnBDiEkkbUEK3GcqxikvAoGAfUfFQoLHIrP18GMKAWkY
-24xTISPUsHAxg1til3ecttzLt0UOyEwPrLFmoaG9GG6sWDQ/1OAoS5H9pt4hqXLF
-CT51gg+ePQimTEsNJTC1XTMl34T191hTCZ68ahehdGIfoLesDKDGMsmD21R9AXa9
-6h9+8y9JUSLrQajflB8KG/ECgYEAkrOckhq9aSIKprRtuCLyFUrgzO0wfHMdCR/M
-8wjupbACBG52eRs8JRWkJv7pCQ4SKQV4K0tqxZjdNqvkUKyRxmI1sAo4xF4K3Ii0
-7U0quLx7VF8zbIISEEznjb6Bn1z3hANBHx8XBaZ67eG2FxJJE5fU+HR1GWTKcJlJ
-MHL5S+MCgYBwECcmBoEUlc/OpR5akaVRcuUYv89tGiIoi6+Op9V1g/nrxGlK8+6x
-z2zoNr+rKzAooPDhBJn5JOrYra8ZzbSe/dF104Smkl/dumV5LtiVZwbwNMxwpiAx
-XCV2uZeiBCRArxsrTkdb61CT8ZClMPhgH1nucUNak51ZdcVoZ6Bi+w==
------END RSA PRIVATE KEY-----%         }}
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd discover-dollar-devops-task
           git pull origin main
