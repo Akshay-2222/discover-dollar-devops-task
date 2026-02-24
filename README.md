@@ -59,3 +59,11 @@ docker-compose up -d --build
 Frontend: http://localhost:8081
 
 Backend API: http://localhost:8080
+
+
+
+
+<img width="1402" height="352" alt="Screenshot 2026-02-24 at 10 11 07 PM" src="https://github.com/user-attachments/assets/4333ae0d-8a77-4624-8502-5300fa4ff656" />
+<img width="1410" height="519" alt="Screenshot 2026-02-24 at 10 10 47 PM" src="https://github.com/user-attachments/assets/5400d0b1-53ff-4248-9691-38028ade0515" />
+<img width="1429" height="310" alt="Screenshot 2026-02-24 at 10 10 18 PM" src="https://github.com/user-attachments/assets/19e1afc4-df9d-4e70-bc76-a0b0be1d71db" />
+<img width="1421" height="377" alt="Screenshot 2026-02-24 at 10 09 40 PM" src="https://github.com/user-attachments/assets/da4a99ec-6fc9-4290-9719-3ae0dc73e926" />
