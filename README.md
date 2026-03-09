@@ -42,13 +42,18 @@ Now, whenever code is pushed to the `main` branch, my workflow automatically:
 
 ---
 
+## 🚀 Automated CI/CD Pipeline
+This project features a fully automated CI/CD pipeline built with GitHub Actions. 
+* **Continuous Integration (Active):** On every push, Docker images are automatically built and pushed to Docker Hub.
+* **Continuous Deployment (Paused):** The final deployment step to AWS EC2 has been commented out in the `main.yml` file because the live server was spun down to prevent cloud costs. Instructions for uncommenting and deploying to your own server are included directly inside the workflow file!
+
 ## 💻 Running the Project Locally
 
 If you'd like to test my setup on your local machine, run the following commands:
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/Akshay-2222/AWS-Cloud-Deployment-Infrastructure-Project]
+   git clone [https://github.com/Akshay-2222/AWS-Cloud-Deployment-Infrastructure-Project.git](https://github.com/Akshay-2222/AWS-Cloud-Deployment-Infrastructure-Project.git)
    cd AWS-Cloud-Deployment-Infrastructure-Project
 
 2.Build and start the containers:
@@ -59,6 +64,7 @@ docker-compose up -d --build
 Frontend: http://localhost:8081
 
 Backend API: http://localhost:8080
+
 
 
 
